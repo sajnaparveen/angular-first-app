@@ -1,0 +1,29 @@
+<p>signup works!</p>
+<div>{{userName}}</div>
+<button class="btn btn-primary" [disabled]="btndisable" (click)="changename()">Toggle</button>
+<input type="text" [(ngModel)]="userName" >
+
+
+<!-- <div>
+    <div *ngIf="age==20 ; else usernotexits">
+<h1>userexits:{{age}}</h1>
+    </div>
+    <ng-template #usernotexits>
+        <h2>usernotexits</h2>
+    </ng-template>
+</div> -->
+
+<div *ngFor = "let user of users">
+    <div [ngSwitch] = "user.status">
+        <li *ngSwitchCase="'active'" [ngStyle]="{'color':'green'}">
+            {{user.name}} is active
+        </li>
+        <li *ngSwitchCase="'InActive'" [ngStyle]="{'color':'blue'}">
+            {{user.name}} is InActive
+        </li>
+        
+        <li *ngSwitchDefault>
+           no result found
+        </li>
+    </div>
+</div>

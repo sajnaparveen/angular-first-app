@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<div class="login">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" [(ngModel)]="inits.username"  class="login__input" placeholder="username">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" [(ngModel)]="inits.password"  class="login__input" placeholder="password">
+				</div>
+        <div>
+				
+				<button type="submit" (click)="login()" class="button login__submit"> 
+					login
+				</button>	
+				<div>
+					<div *ngIf = "inits.username === userdetail.username && userdetail.password == inits.password; else loginfailed">
+						Login success
+				</div>
+			</div>			
+      <ng-template #loginfailed>
+        <h2>login failed</h2>
+    </ng-template>
+		
+  </div>
+
+  
+</div>
+			
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>	
+		
+	<div class="container">
+		<ol>
+			<li *ngFor="let item of addnames">{{item}}</li>
+		</ol>
+		<input type="text" placeholder="name" [(ngModel)]='addname'/>
+		<button (click)="addName()">Add</button>
+		</div>
+
+
+
+</div>
+
+
+ 
+
+
