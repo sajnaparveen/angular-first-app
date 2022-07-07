@@ -1,8 +1,20 @@
 <!-- <app-login></app-login> -->
+     
+<!-- <app-test></app-test> -->
 
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+  
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+     
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" [ngStyle]="{'color':'green'}">signupage</a>
+        <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active" [ngStyle]="{'color':'green'}">Loginpage</a>
+        <a class="nav-item nav-link" routerLink="/test" routerLinkActive="active" [ngStyle]="{'color':'green'}">test</a>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet> -->
+   <app-signup [subjectchild]="subject" (userData)="getnumber($event)"></app-signup>
 
-            <!-- <app-signup></app-signup> -->
-      
-<app-test></app-test>
-
-       
+   <h3>{{generatenumber}}</h3>

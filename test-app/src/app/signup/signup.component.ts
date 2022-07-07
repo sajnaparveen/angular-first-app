@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
 userName :String="sajna";
 btndisable =true;
 message=""
@@ -43,7 +45,7 @@ users=[{
   place:'karur'
 }
 ]
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
     setTimeout(()=>{
@@ -52,6 +54,15 @@ this.btndisable = false;
   }
   changename(){
     this.userName="sajnaparveen"
-
+  }
+  gotologin(){
+    this.router.navigate(['/login'])
+  }
+  @Input('subjectchild') subjectchild :any
+  @Input('data') data:any
+  @Output() userData =new EventEmitter<string>()
+  generatenumber(){
+const randomnum = Math.random()
+this.userData.emit(randomnum)
   }
 }

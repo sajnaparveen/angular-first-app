@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductsService } from './signup/products.service';
 import { SignupComponent } from './signup/signup.component';
 import { TestComponent } from './test/test.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TestComponent } from './test/test.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
