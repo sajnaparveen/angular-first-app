@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -68,7 +68,24 @@ const randomnum = Math.random()
 this.userData.emit(randomnum)
 
   }
+  @ViewChild('userForm') uf : NgForm;
   onsubmit(userForm : NgForm){
     console.log("submitted",userForm)
+  }
+  // setDefaultValues(userForm : NgForm){
+  //   let city={
+  //     cirt:"karur",
+  //     terms:true
+  //   }
+  //   userForm.setValue(city)
+  // }
+
+  setvalue(){
+this.uf.form.patchValue({
+  city:{
+  inputCity:"karur",
+  },
+  gridCheck:true
+})
   }
 }

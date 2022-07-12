@@ -51,32 +51,37 @@
 		<form class="row g-3" (ngSubmit)="onsubmit(userForm)" #userForm="ngForm" >
   <div class="col-md-6">
 	<label for="inputEmail4" class="form-label">Email</label>
-	<input type="email" ngModel class="form-control" id="inputEmail" [ngModelOptions]="{standalone: true}" required email #email="ngModel">
+	<input type="email" ngModel class="form-control" name="inputEmail" id="inputEmail"  required email #email="ngModel">
 <span *ngIf="!email.valid && email.touched">please enter correct email</span>  
 </div>
 
    <div class="col-md-6">
 	<label for="inputPassword4" class="form-label">Password</label>
-	<input type="password" ngModel class="form-control" id="inputPassword4" [ngModelOptions]="{standalone: true}">
+	<input type="password" ngModel class="form-control" name="inputPassword4" id="inputPassword4" >
    </div>
 
    <div class="col-12">
 	<label for="inputAddress2" class="form-label">Address</label>
-	<input type="text" ngModel class="form-control" id="inputAddress2" [ngModelOptions]="{standalone: true}">
+	<input type="text" ngModel class="form-control" name="inputAddress2" id="inputAddress2" >
    </div>
 
    <div class="col-md-6">
 	<label for="inputCity" class="form-label">city</label>
-	<input type="text" ngModel class="form-control" id="inputCity" [ngModelOptions]="{standalone: true}">
+	<input type="text" ngModel class="form-control" name="inputCity" id="inputCity" >
    </div>
 
    <div class="col-md-4">
 	<label for="inputState" class="form-label">State</label>
-	<input type="text" ngModel class="form-control" id="inputState" [ngModelOptions]="{standalone: true}">
+	<input type="text" ngModel class="form-control" name="inputState" id="inputState" >
    </div>
 
    <div class="col-12">
 	<button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">submit</button>
+	
+   </div>
+   <div class="col-12">
+	<button type="submit" class="btn btn-primary" (click)="setvalue()">setvalue</button>
+	
    </div>
 		</form>
 	</div>
