@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -52,6 +53,7 @@ users=[{
 this.btndisable = false;
     },2000)
   }
+
   changename(){
     this.userName="sajnaparveen"
   }
@@ -60,9 +62,13 @@ this.btndisable = false;
   }
   @Input('subjectchild') subjectchild :any
   @Input('data') data:any
-  @Output() userData =new EventEmitter<string>()
+  @Output() userData =new EventEmitter<number>()
   generatenumber(){
 const randomnum = Math.random()
 this.userData.emit(randomnum)
+
+  }
+  onsubmit(userForm : NgForm){
+    console.log("submitted",userForm)
   }
 }

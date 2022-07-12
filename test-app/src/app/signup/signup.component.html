@@ -1,7 +1,7 @@
-<p>signup works!</p>
+<!-- <p>signup works!</p>
 <div>{{userName}}</div>
 <button class="btn btn-primary" [disabled]="btndisable" (click)="changename()">Toggle</button>
-<input type="text" [(ngModel)]="userName" >
+<input type="text" [(ngModel)]="userName" > -->
 
 
 <!-- <div>
@@ -12,7 +12,7 @@
         <h2>usernotexits</h2>
     </ng-template>
 </div> -->
-
+<!-- 
 <div *ngFor = "let user of users">
     <div [ngSwitch] = "user.status">
         <li *ngSwitchCase="'active'" [ngStyle]="{'color':'green'}">
@@ -35,4 +35,49 @@
     <li>{{s.bookname}}</li>
 </div>
 <h3>generatenumber</h3>
-<button type="submit" class="btn btn-primary" (click)="generatenumber()" >gotologin</button>
+<button type="submit" class="btn btn-primary" (click)="generatenumber()" >gotologin</button> -->
+
+
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+	<!-- <p>
+		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+	</p> -->
+	<div class="card" style="width:50rem; height: auto;">
+	<div class="card-body">
+		<form class="row g-3" (ngSubmit)="onsubmit(userForm)" #userForm="ngForm" >
+  <div class="col-md-6">
+	<label for="inputEmail4" class="form-label">Email</label>
+	<input type="email" ngModel class="form-control" id="inputEmail" [ngModelOptions]="{standalone: true}" required email #email="ngModel">
+<span *ngIf="!email.valid && email.touched">please enter correct email</span>  
+</div>
+
+   <div class="col-md-6">
+	<label for="inputPassword4" class="form-label">Password</label>
+	<input type="password" ngModel class="form-control" id="inputPassword4" [ngModelOptions]="{standalone: true}">
+   </div>
+
+   <div class="col-12">
+	<label for="inputAddress2" class="form-label">Address</label>
+	<input type="text" ngModel class="form-control" id="inputAddress2" [ngModelOptions]="{standalone: true}">
+   </div>
+
+   <div class="col-md-6">
+	<label for="inputCity" class="form-label">city</label>
+	<input type="text" ngModel class="form-control" id="inputCity" [ngModelOptions]="{standalone: true}">
+   </div>
+
+   <div class="col-md-4">
+	<label for="inputState" class="form-label">State</label>
+	<input type="text" ngModel class="form-control" id="inputState" [ngModelOptions]="{standalone: true}">
+   </div>
+
+   <div class="col-12">
+	<button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">submit</button>
+   </div>
+		</form>
+	</div>
+</div>
